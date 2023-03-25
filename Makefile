@@ -10,7 +10,8 @@ CONTAINER_NAME := cliente-becas-develop
 build:
 	docker build -t $(IMAGE_NAME):latest  -t $(IMAGE_NAME):$(VERSION) .
 run:
-	docker run --name $(CONTAINER_NAME) -dt -v f:/universidad/cliente-becas/backend:/app/backend -p 3000:3000 $(IMAGE_NAME):latest
-remove:
+	
+	docker run --name $(CONTAINER_NAME) -dt -v f:/universidad/cliente-becas:/app -p 3000:3000 $(IMAGE_NAME):latest
+stop:
 	docker stop $(CONTAINER_NAME)
 	docker rm $(CONTAINER_NAME)
