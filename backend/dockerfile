@@ -1,7 +1,7 @@
 FROM python:3.10.7-bullseye
 
 WORKDIR /app
-COPY requirements.txt .
+COPY backend/requirements.txt .
 RUN pip install -r requirements.txt
 
 RUN rm requirements.txt
