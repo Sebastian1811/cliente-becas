@@ -7,11 +7,12 @@ CONTAINER_NAME := cliente-becas-develop
 
 .PHONY: build
 
-build:
-	docker build -t $(IMAGE_NAME):latest  -t $(IMAGE_NAME):$(VERSION) .
+build-back:
+	docker build --file backend/dockerfile -t $(IMAGE_NAME):latest  -t $(IMAGE_NAME):$(VERSION) .
 run:
-	
 	docker run --name $(CONTAINER_NAME) -dt -v f:/universidad/cliente-becas:/app -p 3000:3000 $(IMAGE_NAME):latest
 stop:
 	docker stop $(CONTAINER_NAME)
 	docker rm $(CONTAINER_NAME)
+start:
+	uvicorn backend.app:app --reload --port 3000
