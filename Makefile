@@ -14,5 +14,7 @@ run:
 stop:
 	docker stop $(CONTAINER_NAME)
 	docker rm $(CONTAINER_NAME)
-start:
+back:
 	uvicorn backend.app:app --reload --port 3000
+front:
+	cd frontend && npm run dev
