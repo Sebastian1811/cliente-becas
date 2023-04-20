@@ -10,7 +10,8 @@ def findAllBecas():
         name = row['name']
         url = row['url']
         requirements = row['requirements']
-        beca = Becas(id=count, name=name, requirements=requirements,url=url)   
+        study_level = row['study_level']
+        beca = Becas(id=count, name=name, requirements=requirements,url=url,study_level=study_level)   
         becas.append(beca)
         count += 1
     return becas
@@ -22,7 +23,8 @@ def findRecommendedBecas(becas,ids):
         name = row['name']
         url = row['url']
         requirements = row['requirements']
-        beca = Becas(id=ids[count], name=name, requirements=requirements,url=url)   
+        study_level = row['study_level']
+        beca = Becas(id=ids[count], name=name, requirements=requirements,url=url,study_level=study_level)   
         recommendedBecas.append(beca)
         count += 1
     return recommendedBecas
@@ -33,9 +35,10 @@ def dumpBeca(beca,id):
         name = row['name']
         url = row['url']
         requirements = row['requirements']
-    return Becas(id=id,name=name,requirements=requirements,url=url)
+        study_level = row['study_level']
+    return Becas(id=id,name=name,requirements=requirements,url=url,study_level=study_level)
 
 def findBeca(id):
     df = getBecasDataSet()
-    beca = df[['name','url','requirements']].iloc[id]
+    beca = df[['name','url','requirements','study_level']].iloc[id]
     return dumpBeca(beca,id)

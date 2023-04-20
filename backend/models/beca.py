@@ -5,3 +5,4 @@ class Becas(BaseModel):
     name: str
     requirements: str
     url: str
+    study_level: str
