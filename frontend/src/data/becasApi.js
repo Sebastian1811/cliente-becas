@@ -21,6 +21,3 @@ export const getAllBeca = () => {
       console.log(error);
     });
 }
-
-
-obtenerBeca(3)
