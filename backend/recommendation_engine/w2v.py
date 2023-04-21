@@ -10,6 +10,7 @@ import pickle
 warnings.filterwarnings('ignore')
 DT_NAME = 'backend/recommendation_engine/Datasets_procesados/DT_becas-03-11-2022-HORA-16-39-51.csv'
 ##DT_NAME = 'DT_becas-03-11-2022-HORA-16-39-51.csv'
+# DT_NAME = 'backend/recommendation_engine/Datasets_procesados/DT_becas-21-04-2023-HORA-00-08-58.csv'
 RECALC_MODEL = False
 
 df = pd.read_csv(DT_NAME)
