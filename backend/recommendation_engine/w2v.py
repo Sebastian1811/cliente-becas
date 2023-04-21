@@ -58,7 +58,7 @@ def recommendations(name):
     print("puntajes",sim_scores)
     becas_recommendations = [i[0] for i in sim_scores]
     becas_recommendations= np.array(becas_recommendations)
-    recommend = df[['name','url','requirements','study_level']].iloc[becas_recommendations]
+    recommend = df[['name','url','requirements','study_level','country_host']].iloc[becas_recommendations]
     return recommend, becas_recommendations
 
 def saveVectors(vectors):

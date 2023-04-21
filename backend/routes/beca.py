@@ -18,7 +18,7 @@ def getAllBecas():
 
 @beca.get('/beca/{id}')
 def getBecaById(id:int):
-    id = np.array([id-1])
+    id = np.array([id])
     response = utility.findBeca(id)
     return response.dict()
 
@@ -31,7 +31,7 @@ def recommendBecaByName(becaName:str):
 @beca.get('/recommends/{becaId}')
 def recommendBecaById(becaId:int):
     print(type(becaId))
-    becaId = np.array([becaId-1])
+    becaId = np.array([becaId])
     beca = utility.findBeca(becaId)
     recommendations,ids = get_cosine_similarity_recommendations(beca.name)
     response = utility.findRecommendedBecas(recommendations,ids)
