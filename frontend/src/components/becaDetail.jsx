@@ -1,19 +1,22 @@
 import React from "react";
 import "../styles/tailwind.css";
 import { useParams } from "react-router-dom";
+import {withRouter} from "react-router"
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CountryHostList from './countryHostList'
 import Recomendaciones from './recomendaciones'
 import NavBar from "./navbar";
-const BecaDetails = () => {
 
+
+const BecaDetails = () => {
   const { id } = useParams();
   const [beca, setBeca] = useState([]);
     useEffect(() => {
       axios.get(`http://localhost:3000/beca/${id}`)
         .then(response => setBeca(response.data))
         .catch(error => console.log(error));
+        console.log(id)
     }, [id]);
 
   return(
@@ -30,11 +33,11 @@ const BecaDetails = () => {
           </div>
           <div className="bg-gray-300 p-5">
             <h2 className="m-0">Requisitos</h2>
-              <p>{beca.requirements}</p>
+              <p>{beca.url}</p>
           </div>
           <div >
             <h1 className="m-0">Listado de Recomendaciones</h1>
-            <Recomendaciones id={id} />
+            <Recomendaciones id={id}/>
           </div>
     </div>
     </div>
@@ -42,5 +45,4 @@ const BecaDetails = () => {
    
 };
 
-
-export default BecaDetails;
+export default withRouter(BecaDetails);

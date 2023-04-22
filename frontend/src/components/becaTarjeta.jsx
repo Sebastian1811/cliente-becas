@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {withRouter} from "react-router"
 const BecaTarjeta = (props) => {
     return (
         <div className="card w-96 bg-neutral text-neutral-content my-6 mx-auto"  >
@@ -7,11 +8,11 @@ const BecaTarjeta = (props) => {
           <h2 className="card-title mb-4" >{props.beca.name}</h2>
           {/* <p>Niveles de estudio: {props.beca.study_level}</p> */}
           <div className="card-actions justify-end">
-            <button class="btn btn-accent btn-outline"><Link to={`/detail/${props.beca.id}`}>Detalles y recomendaciones</Link></button>
+            <Link className="btn btn-accent btn-outline" to={`/detail/${props.beca.id}`}>Detalles y recomendaciones</Link>
           </div>
         </div>
       </div>
 );
 }
 
-export default BecaTarjeta;
+export default withRouter(BecaTarjeta)

@@ -1,7 +1,6 @@
 import NavBar from '../components/navbar';
-import Card from '../components/card';
 import Becas from '../components/becas';
-
+import {withRouter} from "react-router"
 const Home = ()=>{
     return (
         <div>
@@ -12,4 +11,4 @@ const Home = ()=>{
     )
 }
 
-export default Home
+export default withRouter(Home)

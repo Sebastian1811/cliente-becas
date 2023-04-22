@@ -17,5 +17,4 @@ const Becas = () => {
       </div>
     );
   }
-
   export default Becas;
