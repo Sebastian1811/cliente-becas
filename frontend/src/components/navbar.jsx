@@ -3,9 +3,6 @@ import "../styles/tailwind.css";
 import { Link } from "react-router-dom";
 const NavBar = () => {
     return(
-    // <div className="navbar bg-base-100">
-    // <a className="btn btn-ghost normal-case text-xl">MatchWise</a>
-    // </div>
     <div className="navbar bg-base-100">
         <div className="flex-1">
             <Link to={'/'} className="btn btn-ghost normal-case text-xl">MatchWise</Link>

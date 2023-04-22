@@ -8,7 +8,6 @@ import CountryHostList from './countryHostList'
 import Recomendaciones from './recomendaciones'
 import NavBar from "./navbar";
 
-
 const BecaDetails = () => {
   const { id } = useParams();
   const [beca, setBeca] = useState([]);

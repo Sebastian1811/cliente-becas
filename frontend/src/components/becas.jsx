@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ListaBecas from "./becaLista";
-import { getAllBeca, obtenerBeca } from '../data/becasApi';
 import axios from "axios";
 
 const Becas = () => {
