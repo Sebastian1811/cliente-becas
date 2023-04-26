@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AboutPage = () => {
     return (
         <div className="p-3 bg-base-100 container">
-         <h1 className="font-title text-blue-300 text-4xl font-semibold w-2/4 border-b border-gray-400 py-4" >About MatchWise</h1>
+         <h1 className="font-title text-purple-500 text-4xl font-semibold w-2/4 border-b border-gray-400 py-4" >About MatchWise</h1>
          
          <div className="p-3 bg-base-100 font-mono text-xl my-6 container max-w-5xl">
           <p className="text-justify mb-8"> MatchWise es una herramienta construida con el proposito de intentar facilitar el acceso a 
