@@ -18,8 +18,8 @@ const CountryHostList = ({id}) => {
         const items = paises.split(',');
         return (
             <div className="bg-gray-100 p-5">
-                <h2 className="m-0">El/los pais de destino:</h2>
-                <ul className="m-0">
+                <h2 className="m-0 text-black font-bold">El/los pais de destino:</h2>
+                <ul className="m-0 text-black">
                     {items.map((item) => (
                         <li key={item}>{item.trim()}</li>
                     ))}
@@ -30,8 +30,8 @@ const CountryHostList = ({id}) => {
     }else {
         return (
         <div className="bg-gray-100 p-5">
-            <h2 className="m-0">El/los pais de destino:</h2>
-            <ul  className="m-0">
+            <h2 className="m-0 text-black font-bold">El/los pais de destino:</h2>
+            <ul  className="m-0 text-black">
             <li>{paises.trim()}</li>
             </ul>
         </div>
