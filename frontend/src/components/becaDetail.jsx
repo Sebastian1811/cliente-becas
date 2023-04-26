@@ -7,6 +7,7 @@ import axios from "axios";
 import CountryHostList from './countryHostList'
 import Recomendaciones from './recomendaciones'
 import NavBar from "./navbar";
+import Footer from "./footer";
 
 const BecaDetails = () => {
   const { id } = useParams();
@@ -42,6 +43,7 @@ const BecaDetails = () => {
             </div>
           
     </div>
+    <Footer/>
     </div>
   )
    

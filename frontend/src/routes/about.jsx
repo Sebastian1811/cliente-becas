@@ -1,6 +1,6 @@
 import AboutPage from '../components/about'
 import NavBar from '../components/navbar'
-import { withRouter } from 'react-router'
+import Footer from '../components/footer'
 
 
 const About = ()=>{
@@ -8,6 +8,7 @@ const About = ()=>{
         <div>
         <NavBar />
          <AboutPage />
+         <Footer />
         </div>
     )
 }

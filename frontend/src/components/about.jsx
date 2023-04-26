@@ -6,7 +6,7 @@ const AboutPage = () => {
         <div className="p-3 bg-base-100 container">
          <h1 className="font-title text-blue-300 text-4xl font-semibold w-2/4 border-b border-gray-400 py-4" >About MatchWise</h1>
          
-         <div className="p-3 bg-base-100 font-mono  text-xl my-6 container max-w-5xl">
+         <div className="p-3 bg-base-100 font-mono text-xl my-6 container max-w-5xl">
           <p className="text-justify mb-8"> MatchWise es una herramienta construida con el proposito de intentar facilitar el acceso a 
           la educación superior divulgando una recopilación de convocatorias de becas para complementar, iniciar o culminar estudios
           superiores en las areas de la ingeniería y ciencias de la computación.</p>
