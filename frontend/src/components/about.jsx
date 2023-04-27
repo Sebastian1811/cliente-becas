@@ -8,7 +8,7 @@ const AboutPage = () => {
          
          <div className="p-3 bg-base-100 font-mono text-xl my-6 container max-w-5xl">
           <p className="text-justify mb-8"> MatchWise es una herramienta construida con el proposito de intentar facilitar el acceso a 
-          la educación superior divulgando una recopilación de convocatorias de becas para complementar, iniciar o culminar estudios
+          la educación superior divulgando Y generando recomendaciones, a partir de una recopilación de convocatorias de becas para complementar, iniciar o culminar estudios
           superiores en las areas de la ingeniería y ciencias de la computación.</p>
 
           <p className="text-justify mb-6"> MatchWise utiliza un algoritmo de recomendación que fue desarrollado usando tecnicas
