@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/tailwind.css";
-import image from "../../public/owl.svg"
+import image from "../assets/owl.svg"
 
 const Footer = () => {
     return(

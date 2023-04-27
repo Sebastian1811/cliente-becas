@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/tailwind.css";
 import { Link } from "react-router-dom";
-import image from "../../public/owl.svg"
+import image from "../assets/owl.svg"
 
 const NavBar = () => {
     return(
