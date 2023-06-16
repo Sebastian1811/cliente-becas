@@ -35,6 +35,11 @@ const BecaDetails = () => {
             <h2 className="m-0 text-black font-bold">Enlace:</h2>
               <a className="text-blue-300 hover:text-blue-500 font-bold" href={`${beca.url}`} target="_blank" rel="noopener noreferrer">Más información aqui</a>
           </div>
+          <div className="bg-gray-100 p-5">
+            <h2 className="m-0 text-black font-bold">Requisitos:</h2>
+            <p className="m-0 text-black font-bold">{beca.requirements}</p>
+              {/* <a className="text-blue-300 hover:text-blue-500 font-bold" href={`${beca.url}`} target="_blank" rel="noopener noreferrer">Más información aqui</a> */}
+          </div>
           <div className="container w-2/4 mt-9">
             <h1 className="m-0 text-purple-700 font-bold text-4xl border-b border-gray-400 py-4">Recomendaciones:</h1>
             </div> 
