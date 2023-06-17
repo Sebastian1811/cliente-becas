@@ -12,10 +12,11 @@ const Becas = (props) => {
     
     let firstIndex = page * ITEMS_PER_PAGE // PARA PASO DE PARAM DESDE HOME
 
-   
+    const apiUrl = import.meta.env.VITE_API_BECAS
+    
     const [becas, setBecas] = useState([]);
     useEffect(() => {
-      axios.get('http://localhost:3000/beca/all')
+      axios.get(`${apiUrl}/beca/all`)
       .then(response => setBecas(response.data))
       .catch(error => console.log(error));
     }, []);

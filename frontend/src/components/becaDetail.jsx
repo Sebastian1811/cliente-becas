@@ -10,10 +10,11 @@ import NavBar from "./navbar";
 import Footer from "./footer";
 
 const BecaDetails = () => {
+  const apiUrl = import.meta.env.VITE_API_BECAS
   const { id } = useParams();
   const [beca, setBeca] = useState([]);
     useEffect(() => {
-      axios.get(`http://localhost:3000/beca/${id}`)
+      axios.get(`${apiUrl}/beca/${id}`)
         .then(response => setBeca(response.data))
         .catch(error => console.log(error));
         console.log(id)
