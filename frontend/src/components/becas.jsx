@@ -3,21 +3,17 @@ import ListaBecas from "./becaLista";
 import axios from "axios";
 import {withRouter} from "react-router"
 import { Link } from "react-router-dom";
-// import { useParams } from "react-router-dom"; para paso por parametro directo
 
 const Becas = (props) => {
-    // const {page} = useParams(); //PARA PASO  POR PARAMETRO DIRECTO
-    // const pagina = parseInt(page)  //PARA PASO  POR PARAMETRO DIRECTO
+  
     const ITEMS_PER_PAGE = 12
-    // let pagem = pagina * ITEMS_PER_PAGE PARA PASO  POR PARAMETRO DIRECTO
-    
-    const page = parseInt(props.currentpage) // PARA PASO DE PARAM DESDE HOME
+  
+    const page = parseInt(props.currentpage)// PARA PASO DE PARAM DESDE HOME
     
     let firstIndex = page * ITEMS_PER_PAGE // PARA PASO DE PARAM DESDE HOME
+
    
-    
     const [becas, setBecas] = useState([]);
-    
     useEffect(() => {
       axios.get('http://localhost:3000/beca/all')
       .then(response => setBecas(response.data))
@@ -25,48 +21,57 @@ const Becas = (props) => {
     }, []);
     
     const [items, setItems] = useState(becas)
-
     useEffect(() => {
       setItems([...becas].splice(firstIndex,ITEMS_PER_PAGE));
     }, [becas]);
 
-  
-  
     const [currentPage, setCurrentPage] =  useState(page)
 
     const nextHandler = () => {
       const TotalElements = becas.length
-      console.log(currentPage)
-      const nextPage = currentPage +1
-      console.log("nextpage is",nextPage)
+      const nextPage = currentPage + 1
       const firstIndex = nextPage * ITEMS_PER_PAGE  
-      // console.log('estoy4', firstIndex, TotalElements)
       if (firstIndex >= TotalElements) return
-      // console.log(becas,firstIndex,currentPage)
       setItems([...becas].splice(firstIndex,ITEMS_PER_PAGE))
-      setCurrentPage(nextPage)
-     
+      setCurrentPage(nextPage)   
     }
 
     const prevHandler = () => {
         const prevPage = currentPage -1
-        if (prevPage < 0) return
+        if (prevPage < 0) {setCurrentPage(-1)}
         const firstIndex = prevPage * ITEMS_PER_PAGE
-        // console.log("anterior pagina")
         setItems([...becas].splice(firstIndex,ITEMS_PER_PAGE))
         setCurrentPage(prevPage)
     }
+  
+    if (currentPage < 0){
+      return(
+       <div className="flex justify-center items-center mt-20 mb-20">
+        <div className="hover:bg-green-700 btn alert alert-warning w-1/4 flex justify-center items-center ">
+        <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+        <Link className="  font-bold " onClick={nextHandler} to={`/page/${0}`}>Parece que te perdiste si quieres volver haz click</Link>
+      </div>
+       </div>
+
+       
+      );
+    }
+    else {
+
     return (
       <div>
-        <h1 className=" p-3 font-title text-purple-500 inline-flex text-lg transition-all duration-200 md:text-3xl ml-4 mt-6">Listado de becas</h1>
+        <h1 className=" p-3 font-title text-purple-500 inline-flex text-lg transition-all duration-200 md:text-3xl ml-4 mt-6">Listado de becas disponibles</h1>
         <br/>
-        {/* <button onClick={prevHandler} className="btn btn-accent btn-outline mr-10 mb-8  ml-10" >Prev</button>
-        <button onClick={nextHandler} className="btn btn-accent btn-outline mr-10 mb-8  ml-10" >Next</button> */}
-
-        <Link onClick={prevHandler} to={`/page/${currentPage-1}`} className="btn btn-accent btn-outline mr-10 mb-8  ml-10" >Prev</Link>
-        <Link onClick={nextHandler} to={`/page/${currentPage+1}`} className="btn btn-accent btn-outline mr-10 mb-8  ml-10" >Next</Link>
         <ListaBecas becas={items} />
+        <div className="join flex justify-center items-center">
+          <Link onClick={prevHandler} to={`/page/${currentPage-1}`} className="join-item btn">«</Link>
+          <h1 className="join-item btn ml-2 mr-2">{currentPage}</h1>
+          <Link onClick={nextHandler} to={`/page/${currentPage+1}`} className="join-item btn">»</Link>
+        </div>
       </div>
     );
+    }
+    
   }
+
   export default Becas;
