@@ -12,8 +12,8 @@ const NavBar = () => {
         </div>
         <div className="flex-none ">
             <ul className="menu menu-horizontal px-1 text-2xl">
-            <li><Link to={'/'}>Home</Link></li>
-            <li><Link to={'/about'}>About</Link></li>
+            <li><Link className=" hover:bg-purple-700" to={'/'}>Home</Link></li>
+            <li><Link className=" hover:bg-purple-700" to={'/about'}>About</Link></li>
             </ul>
         </div>
     </div>
