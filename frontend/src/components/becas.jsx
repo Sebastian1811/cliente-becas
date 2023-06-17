@@ -49,26 +49,23 @@ const Becas = (props) => {
        <div className="flex justify-center items-center mt-20 mb-20">
         <div className="hover:bg-green-700 btn alert alert-warning w-1/4 flex justify-center items-center ">
         <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-        <Link className="  font-bold " onClick={nextHandler} to={`/page/${0}`}>Parece que te perdiste si quieres volver haz click</Link>
+        <Link className=" font-bold " to={`/`}>Parece que te perdiste si quieres volver haz click</Link>
       </div>
        </div>
-
-       
       );
     }
     else {
-
-    return (
-      <div>
-        <h1 className=" p-3 font-title text-purple-500 inline-flex text-lg transition-all duration-200 md:text-3xl ml-4 mt-6">Listado de becas disponibles</h1>
-        <br/>
-        <ListaBecas becas={items} />
-        <div className="join flex justify-center items-center">
-          <Link onClick={prevHandler} to={`/page/${currentPage-1}`} className="join-item btn">«</Link>
-          <h1 className="join-item btn ml-2 mr-2">{currentPage}</h1>
-          <Link onClick={nextHandler} to={`/page/${currentPage+1}`} className="join-item btn">»</Link>
+      return (
+        <div>
+          <h1 className=" p-3 font-title text-purple-500 inline-flex text-lg transition-all duration-200 md:text-3xl ml-4 mt-6">Listado de becas disponibles</h1>
+          <br/>
+          <ListaBecas becas={items} />
+          <div className="join flex justify-center items-center">
+            <Link onClick={prevHandler} to={`/page/${currentPage-1}`} className="join-item btn">«</Link>
+            <h1 className="join-item btn ml-2 mr-2">{currentPage}</h1>
+            <Link onClick={nextHandler} to={`/page/${currentPage+1}`} className="join-item btn">»</Link>
+          </div>
         </div>
-      </div>
     );
     }
     
