@@ -5,9 +5,9 @@ import { withRouter } from "react-router";
 
 const Recomendaciones = ({id}) => {
     const [becas, setBecas] = useState([]);
-    
+    const apiUrl = import.meta.env.VITE_API_BECAS
     useEffect(() => {
-      axios.get(`http://localhost:3000/recommends/${id}`)
+      axios.get(`${apiUrl}/recommends/${id}`)
       .then(response => setBecas(response.data))
       .catch(error => console.log(error));
       console.log(id)

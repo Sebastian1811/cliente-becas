@@ -3,10 +3,10 @@ import "../styles/tailwind.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 const CountryHostList = ({id}) => {
-
+    const apiUrl = import.meta.env.VITE_API_BECAS
     const [beca, setBeca] = useState([]);
     useEffect(() => {
-      axios.get(`http://localhost:3000/beca/${id}`)
+      axios.get(`${apiUrl}/beca/${id}`)
         .then(response => setBeca(response.data))
         .catch(error => console.log(error));
     }, [id]);
