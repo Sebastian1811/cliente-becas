@@ -51,7 +51,7 @@ const Becas = () => {
         <br/>
         <button onClick={prevHandler} className="btn btn-accent btn-outline mr-10 mb-8  ml-10" >Prev</button>
         <button onClick={nextHandler} className="btn btn-accent btn-outline mr-10 mb-8  ml-10" >Next</button>
-        <ListaBecas page={currentPage} becas={items} />
+        <ListaBecas becas={items} />
       </div>
     );
   }
