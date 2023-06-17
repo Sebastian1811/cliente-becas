@@ -17,32 +17,33 @@ const Becas = () => {
     
     const [items, setItems] = useState(becas)
 
-    // useEffect(() => {
-    //   setItems(becas.splice(0,ITEMS_PER_PAGE));
-    // }, [becas]);
+    useEffect(() => {
+      setItems([...becas].splice(0,ITEMS_PER_PAGE));
+    }, [becas]);
 
     // console.log('soy copy',copy)
-    console.log('soy items',items)
+  
     const [currentPage, setCurrentPage] =  useState(0)
 
     const nextHandler = () => {
-      console.log('estoy')
       const TotalElements = becas.length
-      console.log('estoy2')
       const nextPage = currentPage + 1
-      console.log('estoy3')
       const firstIndex = nextPage * ITEMS_PER_PAGE
       console.log('estoy4', firstIndex, TotalElements)
       if (firstIndex >= TotalElements) return
-      console.log(becas)
-      setItems(becas.splice(firstIndex,ITEMS_PER_PAGE))
+      console.log(becas,firstIndex)
+      setItems([...becas].splice(firstIndex,ITEMS_PER_PAGE))
       setCurrentPage(nextPage)
-      // console.log(TotalElements)
-      console.log('hola', nextPage)
+     
     }
 
     const prevHandler = () => {
+        const prevPage = currentPage -1
+        if (prevPage < 0) return
+        const firstIndex = prevPage * ITEMS_PER_PAGE
         console.log("anterior pagina")
+        setItems([...becas].splice(firstIndex,ITEMS_PER_PAGE))
+        setCurrentPage(prevPage)
     }
     return (
       <div>
@@ -50,7 +51,7 @@ const Becas = () => {
         <br/>
         <button onClick={prevHandler} className="btn btn-accent btn-outline mr-10 mb-8  ml-10" >Prev</button>
         <button onClick={nextHandler} className="btn btn-accent btn-outline mr-10 mb-8  ml-10" >Next</button>
-        <ListaBecas page={currentPage} becas={becas} />
+        <ListaBecas page={currentPage} becas={items} />
       </div>
     );
   }
