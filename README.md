@@ -10,9 +10,11 @@ Corresponde al backend y frontend del sistema de recomendación. En este reposit
 
 # Dockerizar  y correr docker del proyecto :whale2:
 
-Para ahorrar tiempo instalando runtimes y dependencias se puede correr el siguiente comando para levantar un contenedor de docker, el contenedor incluye backend y frontend
+Para ahorrar tiempo instalando runtimes y dependencias se puede correr el siguiente comando para levantar un contenedor de docker, el contenedor incluye backend y frontend.
+Tenga en cuenta que debe contar con el runtime de docker para que funcione.
 
-- *Dockerizar:* Tendrá disponible el backend en el puerto 3000 y el frontend en el puerto 80 
+- *Dockerizar:* Tendrá disponible el backend en el puerto 3000 y el frontend en el puerto 80.
+
 ```shell
  make dockerize
 ```
