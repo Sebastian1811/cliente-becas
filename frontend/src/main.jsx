@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import BecaDetails from './components/becaDetail'
 
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
@@ -20,7 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           </Route>
           <Route exact path="/">
           <Redirect to="/page/0" />
-            {/* <Home /> */}
           </Route>
           <Route path="/page/:page">
             <Home/>
