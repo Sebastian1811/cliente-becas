@@ -8,18 +8,19 @@ Corresponde al backend y frontend del sistema de recomendación. En este reposit
 - El frontend se desarrollo usando Vite 4.2.0 + React 18.2.0, Tailwind 3.3.1 css como framework de estilos, daisy UI 2.51.5 para algunos componentes.
 - Tener make instalado.
 
-# Dockerizar  y correr docker del proyecto :whale2: DEPRECADO
+# Dockerizar  y correr docker del proyecto :whale2:
 
+Para ahorrar tiempo instalando runtimes y dependencias se puede correr el siguiente comando para levantar un contenedor de docker, el contenedor incluye backend y frontend
 
-- *Dockerizar:* 
+- *Dockerizar:* Tendrá disponible el backend en el puerto 3000 y el frontend en el puerto 80 
 ```shell
- make build
+ make dockerize
 ```
 
-- *Correr contenedor:*
+- *Detener proyecto y borrar contenedor:*
 
 ```shell
- make run
+ make stop
 ```
 # Correr app en local :computer:
 
