@@ -6,6 +6,7 @@ Corresponde al backend y frontend del sistema de recomendación. En este reposit
 
 - El backend fue construido sobre Fast api como web framework y Python 3.10.7
 - El frontend se desarrollo usando Vite 4.2.0 + React 18.2.0, Tailwind 3.3.1 css como framework de estilos, daisy UI 2.51.5 para algunos componentes.
+- Tener make instalado.
 
 # Dockerizar  y correr docker del proyecto :whale2: DEPRECADO
 
