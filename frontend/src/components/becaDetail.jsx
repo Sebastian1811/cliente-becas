@@ -20,6 +20,8 @@ const BecaDetails = () => {
         console.log(id)
     }, [id]);
 
+  const htmlreq = beca.htmlreqs
+
   return(
     <div>
     <NavBar/>
@@ -38,7 +40,9 @@ const BecaDetails = () => {
           </div>
           <div className="bg-gray-100 p-5">
             <h2 className="m-0 text-black font-bold">Requisitos:</h2>
-            <p className="m-0 text-black font-bold">{beca.requirements}</p>
+            <div className="m-0 text-black" dangerouslySetInnerHTML={{ __html: htmlreq }}></div>
+            
+            {/* <p className="m-0 text-black font-bold">{beca.requirements}</p> */}
               {/* <a className="text-blue-300 hover:text-blue-500 font-bold" href={`${beca.url}`} target="_blank" rel="noopener noreferrer">Más información aqui</a> */}
           </div>
           <div className="container w-2/4 mt-9">

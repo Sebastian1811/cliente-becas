@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-
 class Becas(BaseModel):
     id: int
     name: str
@@ -7,3 +6,4 @@ class Becas(BaseModel):
     url: str
     study_level: str
     country_host: str
+    htmlreqs: str

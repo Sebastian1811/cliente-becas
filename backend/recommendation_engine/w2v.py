@@ -8,9 +8,10 @@ import warnings
 #import plotly.graph_objects as go
 import pickle
 warnings.filterwarnings('ignore')
-DT_NAME = 'backend/recommendation_engine/Datasets_procesados/DT_becas-03-11-2022-HORA-16-39-51.csv'
+# DT_NAME = 'backend/recommendation_engine/Datasets_procesados/DT_becas-03-11-2022-HORA-16-39-51.csv'
 ##DT_NAME = 'DT_becas-03-11-2022-HORA-16-39-51.csv'
 # DT_NAME = 'backend/recommendation_engine/Datasets_procesados/DT_becas-21-04-2023-HORA-00-08-58.csv'
+DT_NAME = 'backend/recommendation_engine/Datasets_procesados/dt_becas_with_html2.csv'
 RECALC_MODEL = False
 
 df = pd.read_csv(DT_NAME)
@@ -59,7 +60,7 @@ def recommendations(name):
     print("puntajes",sim_scores)
     becas_recommendations = [i[0] for i in sim_scores]
     becas_recommendations= np.array(becas_recommendations)
-    recommend = df[['name','url','requirements','study_level','country_host']].iloc[becas_recommendations]
+    recommend = df[['name','url','requirements','study_level','country_host','htmlreqs']].iloc[becas_recommendations]
     return recommend, becas_recommendations
 
 def saveVectors(vectors):
