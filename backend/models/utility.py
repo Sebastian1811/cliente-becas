@@ -2,6 +2,8 @@ from .beca import Becas
 from backend.recommendation_engine.exposeScripts import getBecasDataSet
 import numpy as np
 
+
+
 def findAllBecas():
     df = getBecasDataSet()
     becas = []
@@ -12,7 +14,8 @@ def findAllBecas():
         requirements = row['requirements']
         study_level = row['study_level']
         country_host = row['country_host']
-        beca = Becas(id=count, name=name, requirements=requirements,url=url,study_level=study_level,country_host=country_host)   
+        htmlreqs = row['htmlreqs']
+        beca = Becas(id=count, name=name, requirements=requirements,url=url,study_level=study_level,country_host=country_host,htmlreqs=htmlreqs)   
         becas.append(beca)
         count += 1
     return becas
@@ -26,7 +29,8 @@ def findRecommendedBecas(becas,ids):
         requirements = row['requirements']
         study_level = row['study_level']
         country_host = row['country_host']
-        beca = Becas(id=ids[count], name=name, requirements=requirements,url=url,study_level=study_level,country_host=country_host)   
+        htmlreqs = row['htmlreqs']
+        beca = Becas(id=ids[count], name=name, requirements=requirements,url=url,study_level=study_level,country_host=country_host,htmlreqs=htmlreqs)   
         recommendedBecas.append(beca)
         count += 1
     return recommendedBecas
@@ -39,9 +43,10 @@ def dumpBeca(beca,id):
         requirements = row['requirements']
         study_level = row['study_level']
         country_host = row['country_host']
-    return Becas(id=id,name=name,requirements=requirements,url=url,study_level=study_level,country_host=country_host)
+        htmlreqs = row['htmlreqs']
+    return Becas(id=id,name=name,requirements=requirements,url=url,study_level=study_level,country_host=country_host,htmlreqs=htmlreqs)
 
 def findBeca(id):
     df = getBecasDataSet()
-    beca = df[['name','url','requirements','study_level','country_host']].iloc[id]
+    beca = df[['name','url','requirements','study_level','country_host','htmlreqs']].iloc[id]
     return dumpBeca(beca,id)
